@@ -1,7 +1,22 @@
+var APP_PATH = "./app/index.js";
+var BUILD_PATH = "./public/javascripts";
+
 module.exports = {
-    entry: "./app/entry.js",
+    entry: APP_PATH,
     output: {
-        path: "./public/javascripts",
+        path: BUILD_PATH,
         filename: "bundle.js"
+    },
+    module: {
+        loaders: [
+            {
+                test: /\.css$/,
+                loaders: ['style', 'css']
+            },
+            {
+                test: /\.jsx?$/,
+                loaders: ['babel']
+            }
+        ]
     }
 };

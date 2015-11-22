@@ -13,6 +13,15 @@
     "express": "~4.12.4",
     "hbs": "~2.9.0",
     "morgan": "~1.5.3",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
     "serve-favicon": "~2.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.34",
+    "babel-loader": "^5.4.0",
+    "css-loader": "^0.23.0",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.8"
   }
 }
