@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports) {
 
-	document.write("It works from baby cat");
+	document.write("It works from baby fig");
 
 
 /***/ }
