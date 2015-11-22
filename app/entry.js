@@ -1,1 +1,1 @@
-document.write("It works from baby fig");
+document.write("It works from baby cat");
