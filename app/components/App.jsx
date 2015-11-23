@@ -1,6 +1,6 @@
 import React from 'react';
-import Note from './Note.jsx';
+import MainView from './MainView.jsx';
 
 export default () => {
-    return <Note />;
+    return <MainView />;
 };

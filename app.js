@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var request = require('superagent');
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -24,6 +26,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+app.use('/search/:id', function(req, res, next){
+    var NAME_ENDPOINT = 'https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/';
+    var NAME_URL = NAME_ENDPOINT + req.params.id;
+    
+
+    request
+        .get(NAME_URL)
+        .query({ 'api_key': RIOT_KEY })
+        .end(function(err, response){
+            res.send(response.text);
+        })
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
